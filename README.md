@@ -11,6 +11,7 @@ Let's define "A" as a parameter, "X" as a feature and "B" a bias. The goal is to
 When the data are being processed through the first layer and the first activation function, we get an output value X1 = F1(A1*X+B1) where F1 corresponds to the RELU activation function. 
 
 Skip connections are added for the second layer. When the data are passed through the second layer before the activation function, we have something of the form A2*X1+B2. That value is passed through the TANH activation function F2, so we get something of the form F2(A2*X1+B2); but the output obtained at the first layer is added to that value so we get X2 = F2(A2*X1+B2) + X1. That operation corresponds to adding skip connections to the model. 
+To put it simply, skip connections take the outputs of a layer A and add those outputs to the one of a different layer B. It's worth mentionning that because of the forward pass, layer B has to be "in front" of layer A.
 
 For the last layer, the output is simply X3 = (A3*X2+B3)^2.
 
